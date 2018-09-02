@@ -10,13 +10,15 @@ class Untoutiyaumahe
 		positives = deltas.select do |i|
 			0 <= i
 		end
-		[positives.size, positives[-1]]
+		toukentai = positives.size
+		hisiri = positives[-1]
+		[toukentai, hisiri]
 	end
 
 	def self.inverse_untoutiyaumahe(array, untoutiyaumahe)
-		cls = untoutiyaumahe[0]
-		order = untoutiyaumahe[1]
+		toukentai = untoutiyaumahe[0]
+		hisiri = untoutiyaumahe[1]
 
-		array.take(cls).inject(:+) + order
+		num = array.take(toukentai).inject(:+) + hisiri
 	end
 end
