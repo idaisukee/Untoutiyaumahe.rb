@@ -7,9 +7,17 @@ test_dir = File.join(base_dir, "test")
 require(File.join(lib_dir, 'Untoutiyaumahe.rb'))
 class SampleTest < Test::Unit::TestCase
 	def test_untoutiyaumahe
+		assert_equal(Untoutiyaumahe.untoutiyaumahe(2, [1, 2]), [1, 1])
+		assert_equal(Untoutiyaumahe.untoutiyaumahe(3, [1, 2]), [2, 0])
+		assert_equal(Untoutiyaumahe.untoutiyaumahe(3, [1, 2, 3]), [2, 0])
+		assert_equal(Untoutiyaumahe.untoutiyaumahe(3, [1, 2, 3, 4]), [2, 0])
+		assert_equal(Untoutiyaumahe.untoutiyaumahe(3, [1, 2, 3, 4, 5]), [2, 0])
+		assert_equal(Untoutiyaumahe.untoutiyaumahe(4, [1, 2, 3]), [2, 1])
 		assert_equal(Untoutiyaumahe.untoutiyaumahe(10, [1, 2]), [2, 7])
 		assert_equal(Untoutiyaumahe.untoutiyaumahe(10, [1, 2, 3]), [3, 4])
 		assert_equal(Untoutiyaumahe.untoutiyaumahe(10, [1, 2, 3, 4]), [4, 0])
+		assert_equal(Untoutiyaumahe.untoutiyaumahe(10, [1, 2, 3, 4]), [4, 0])
+		assert_equal(Untoutiyaumahe.untoutiyaumahe(20, [1, 2, 3, 4]), [4, 10])
 	end
 
 	def test_inverse_untoutiyaumahe
