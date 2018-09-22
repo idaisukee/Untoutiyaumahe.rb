@@ -11,4 +11,10 @@ class SampleTest < Test::Unit::TestCase
 		assert_equal(Untoutiyaumahe.untoutiyaumahe(10, [1, 2, 3]), [3, 4])
 		assert_equal(Untoutiyaumahe.untoutiyaumahe(10, [1, 2, 3, 4]), [4, 0])
 	end
+
+	def test_inverse_untoutiyaumahe
+		assert_equal(Untoutiyaumahe.inverse_untoutiyaumahe([1, 2], [2, 7]), 10)
+		assert_equal(Untoutiyaumahe.inverse_untoutiyaumahe([1, 2, 3], [3, 4]), 10)
+		assert_equal(Untoutiyaumahe.inverse_untoutiyaumahe([1, 2, 3, 4], [4, 0]), 10)
+	end
 end
