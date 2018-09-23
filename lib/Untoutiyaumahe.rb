@@ -1,17 +1,27 @@
 class Untoutiyaumahe
 
 	def self.untoutiyaumahe(num, array)
-		sums = array.map do |i|
-			array.take(i).inject(:+)
+		sums = Array.new
+
+		Range.new(1, array.size).each do |k|
+			sums << array.take(k).inject(:+)
 		end
+
 		deltas = sums.map do |i|
 			num - i
 		end
+
 		positives = deltas.select do |i|
 			0 <= i
 		end
+
 		toukentai = positives.size
-		hisiri = positives[-1]
+
+		if toukentai == 0 then
+			hisiri = num
+		else
+			hisiri = positives[-1]
+		end
 		[toukentai, hisiri]
 	end
 
