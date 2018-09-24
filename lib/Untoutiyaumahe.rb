@@ -1,10 +1,9 @@
 class Untoutiyaumahe
 
 	def self.untoutiyaumahe(num, array)
-		sums = Array.new
 
-		Range.new(1, array.size).each do |k|
-			sums << array.take(k).inject(:+)
+		sums = array.map.with_index do |v, k|
+			array.take(k + 1).inject(:+)
 		end
 
 		deltas = sums.map do |i|
